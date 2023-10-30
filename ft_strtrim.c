@@ -3,71 +3,51 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmidou <rmidou@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nbiron <nbiron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/03 15:55:05 by nbiron            #+#    #+#             */
-/*   Updated: 2023/10/12 09:01:51 by rmidou           ###   ########.fr       */
+/*   Created: 2023/10/03 15:43:28 by nbiron            #+#    #+#             */
+/*   Updated: 2023/10/30 13:28:35 by nbiron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	in(char c, char const *set)
+static int	ft_is_char_in_set(char c, char const *set)
 {
 	int	i;
 
 	i = 0;
 	while (set[i])
 	{
-		if (c == set[i])
+		if (set[i] == c)
 			return (1);
 		i++;
 	}
 	return (0);
 }
 
-static int	len(char const *s1, char const *set)
-{
-	int		count;
-	int		i;
-
-	count = 0;
-	i = 0;
-	while (in(s1[i], set))
-		i++;
-	count = i;
-	i = ft_strlen(s1) - 1;
-	while (in(s1[i], set))
-	{
-		i--;
-		count++;
-	}
-	return (count);
-}
-
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*mallo;
-	int		count;
-	int		i2;
-	int		i;
+	char	*str;
+	size_t	start;
+	size_t	end;
+	size_t	i;
 
 	i = 0;
-	i2 = 0;
-	count = len(s1, set);
-	if (!s1 || !set)
+	start = 0;
+	end = ft_strlen(s1);
+	while (s1[start] && ft_is_char_in_set(s1[start], set))
+		start++;
+	while (end > start && ft_is_char_in_set(s1[end - 1], set))
+		end--;
+	str = (char *)malloc((end - start + 1) * sizeof(char));
+	if (!str)
 		return (NULL);
-	mallo = (char *)malloc((ft_strlen(s1) + 1) * sizeof(char));
-	if (!mallo)
-		return (NULL);
-	while (in(s1[i], set))
-		i++;
-	while ((size_t)i2 < ft_strlen(s1) - count)
+	while (i + start < end)
 	{
-		mallo[i2] = s1[i];
-		i2++;
+		str[i] = s1[start + i];
 		i++;
 	}
-	mallo[i2] = '\0';
-	return (mallo);
+	str[i] = '\0';
+	return (str);
 }
