@@ -6,12 +6,11 @@
 /*   By: nbiron <nbiron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 13:00:21 by rmidou            #+#    #+#             */
-/*   Updated: 2023/10/17 16:55:52 by nbiron           ###   ########.fr       */
+/*   Updated: 2023/12/17 19:57:21 by nbiron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
-#include "ft_printf.h"
+#include "libft.h"
 
 int	display(unsigned int nb, char *str, char *result, int index)
 {

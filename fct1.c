@@ -6,12 +6,11 @@
 /*   By: nbiron <nbiron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 08:16:19 by rmidou            #+#    #+#             */
-/*   Updated: 2023/10/17 16:55:34 by nbiron           ###   ########.fr       */
+/*   Updated: 2023/12/17 19:57:39 by nbiron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
-#include "ft_printf.h"
+#include "libft.h"
 
 static char	*ft_putptr_two(unsigned long long int n, int j)
 {

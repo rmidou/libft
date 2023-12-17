@@ -6,12 +6,11 @@
 /*   By: nbiron <nbiron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 16:24:10 by rmidou            #+#    #+#             */
-/*   Updated: 2023/10/17 16:53:48 by nbiron           ###   ########.fr       */
+/*   Updated: 2023/12/17 19:57:32 by nbiron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
-#include "ft_printf.h"
+#include "libft.h"
 
 char	*addc(char *str, char c, int *i)
 {
