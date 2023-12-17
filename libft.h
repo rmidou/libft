@@ -6,13 +6,14 @@
 /*   By: nbiron <nbiron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 20:38:10 by nbiron            #+#    #+#             */
-/*   Updated: 2023/11/23 15:29:22 by nbiron           ###   ########.fr       */
+/*   Updated: 2023/12/17 19:46:02 by nbiron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <stdarg.h>
 # include <stdlib.h>
 # include <unistd.h>
 
@@ -70,7 +71,15 @@ t_list			*ft_lstmap(t_list *lst, void*(*f)(void*), void(*del)(void*));
 t_list			*ft_lstnew(void *content);
 int				ft_lstsize(t_list *lst);
 char			*get_next_line(int fd);
-char	*ft_str_join(char *s1, char *s2);
-size_t	ft_str_len(char *str);
-char	*ft_str_chr(char *s, int c);
+char			*ft_str_join(char *s1, char *s2);
+size_t			ft_str_len(char *str);
+char			*ft_str_chr(char *s, int c);
+char			*addc(char *str, char c, int *i);
+char			*adds(char *str, char *c, int *i);
+char			*arg(char *str, char *input, va_list params, int *i);
+char			*ft_convert_base(unsigned int nbr, char *base_to);
+char			*ft_itoau(unsigned int n, int *i);
+char			*ft_putptr(unsigned long long int n, char *str, int *i);
+int				ft_printf(const char *s, ...);
+int				ft_hexalen(unsigned long long int n);
 #endif
